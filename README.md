@@ -4,7 +4,10 @@
 
 our homepage. [aloe-health.tech](https://aloe-health.tech)
 
-## Notes:
+## Configuration:
+
+This repository is actually hosted in the private aloe repository, but a public clone of the website is available here.
+
 To pull updates from the external repo into this repo in the future:
 ```bash
 git subtree pull --prefix=business/website website main --squash
