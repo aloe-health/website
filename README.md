@@ -8,6 +8,16 @@ our homepage. [aloe-health.tech](https://aloe-health.tech)
 
 This repository is actually hosted in the private aloe repository, but a public clone of the website is available here.
 
+### Setup
+
+The website remote url needs to be configured as a git remote in the local repository.
+
+```bash
+git remote add website git@github.com:aloe-health/website.git
+```
+
+### Maintenance
+
 To pull updates from the external repo into this repo in the future:
 ```bash
 git subtree pull --prefix=business/website website main --squash
