@@ -6,7 +6,7 @@ base = "frontend"
 command = "npm run build"
 
 # Directory with the static files to deploy
-publish = "frontend/dist"
+publish = "dist"
 
 [build.environment]
 # Use Node.js 18 or higher
