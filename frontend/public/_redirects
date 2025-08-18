@@ -1,0 +1,14 @@
+# SPA fallback for client-side routing
+/*    /index.html   200
+
+# Optional: Redirect old paths if needed
+# /old-path    /new-path    301
+
+# Force trailing slashes (optional)
+# /*    /:splat/    301!  "Path=/[!/]*"
+
+# API redirects (if you have external APIs)
+# /api/*    https://your-api-domain.com/api/:splat    200
+
+# Form submissions are handled automatically by Netlify
+# No redirects needed for forms with data-netlify="true"
