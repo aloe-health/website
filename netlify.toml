@@ -1,0 +1,81 @@
+[build]
+# Directory to run the build command in
+base = "frontend"
+
+# Build command to run
+command = "npm run build"
+
+# Directory with the static files to deploy
+publish = "frontend/dist"
+
+[build.environment]
+# Use Node.js 18 or higher
+NODE_VERSION = "18"
+
+# Form handling - redirect successful form submissions to success page
+[[redirects]]
+from = "/success"
+to = "/success"
+status = 200
+
+# SPA routing - catch all other routes and serve index.html
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+# Security headers
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
+
+# Cache static assets
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images
+[[headers]]
+for = "/*.svg"
+[headers.values]
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/*.png"
+[headers.values]
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/*.jpg"
+[headers.values]
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/*.ico"
+[headers.values]
+Cache-Control = "public, max-age=86400"
+
+# Form processing settings
+[build.processing]
+skip_processing = false
+
+[build.processing.css]
+bundle = true
+minify = true
+
+[build.processing.js]
+bundle = true
+minify = true
+
+[build.processing.html]
+pretty_urls = true
+
+# Form handling is automatic for forms with data-netlify="true"
+# The action="/success" in the form will automatically redirect to the success page
+# No additional configuration needed for Netlify Forms

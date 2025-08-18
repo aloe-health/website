@@ -44,6 +44,7 @@ const Contact: Component = () => {
           method="POST"
           data-netlify="true"
           data-netlify-recaptcha="true"
+          action="/success"
         >
           <input type="hidden" name="form-name" value="contact" />
 
@@ -52,7 +53,7 @@ const Contact: Component = () => {
             <input
               type="text"
               name="name"
-              class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
+              class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
               placeholder="your name"
               required
               value={formData().name}
@@ -65,7 +66,7 @@ const Contact: Component = () => {
             <input
               type="email"
               name="email"
-              class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
+              class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
               placeholder="your email"
               required
               value={formData().email}
@@ -77,7 +78,7 @@ const Contact: Component = () => {
             <label class="block text-gray-700 mb-2">Message</label>
             <textarea
               name="message"
-              class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
+              class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
               rows="5"
               placeholder="your message"
               required

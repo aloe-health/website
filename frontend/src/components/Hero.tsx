@@ -10,8 +10,8 @@ import { Motion } from "solid-motionone";
 const Hero: Component = () => {
   return (
     <section class="snap-start flex items-center justify-center bg-gradient-to-t from-emerald-400 to-green-100 h-screen">
-      <Motion.h1
-        class="text-8xl md:text-8xl font-bold text-white"
+      <Motion.div
+        class="w-96 h-48 md:w-[30rem] md:h-60"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -20,8 +20,12 @@ const Hero: Component = () => {
           easing: "ease-out",
         }}
       >
-        aloe.
-      </Motion.h1>
+        <img
+          src="/aloe-logo-wt-glyph.svg"
+          alt="Aloe Health"
+          class="w-full h-full object-contain"
+        />
+      </Motion.div>
     </section>
   );
 };
