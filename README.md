@@ -24,7 +24,6 @@ To push changes manually from local without waiting for CI:
 ```bash
 git subtree push --prefix=business/website website main
 ```
-
 ```bash
 git subtree pull --prefix=business/website website main --squash
 ```
