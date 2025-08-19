@@ -20,10 +20,11 @@ git remote add website git@github.com:aloe-health/website.git
 
 To pull updates from the external repo into this repo in the future:
 *Note: All changes must be committed beforehand.*
-```bash
-git subtree pull --prefix=business/website website main --squash
-```
 To push changes manually from local without waiting for CI:
 ```bash
 git subtree push --prefix=business/website website main
+```
+
+```bash
+git subtree pull --prefix=business/website website main --squash
 ```
