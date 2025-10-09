@@ -15,6 +15,7 @@ Purpose: Main CSS file with Tailwind v4 imports and theme configuration for Aloe
     --color-emerald-200: #a7f3d0;
     --color-emerald-300: #6ee7b7;
     --color-emerald-400: #34d399;
+    --color-emerald-450: #1fb981;
     --color-emerald-500: #10b981;
     --color-emerald-600: #059669;
     --color-emerald-700: #047857;
@@ -77,5 +78,36 @@ Purpose: Main CSS file with Tailwind v4 imports and theme configuration for Aloe
     .hover-effect:hover {
         /* stylelint-disable-next-line at-rule-no-unknown */
         @apply underline;
+    }
+
+    /* Stealth-style text glow */
+    .text-glow {
+        text-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+    }
+
+    /* Subtle gradient animations for backgrounds */
+    .bg-gradient-animate {
+        background-size: 200% 200%;
+        animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Text glow effects */
+    .text-glow-emerald {
+        text-shadow: 0 0 10px rgba(16, 185, 129, 0.3), 0 0 20px rgba(16, 185, 129, 0.2), 0 0 30px rgba(16, 185, 129, 0.1);
+    }
+
+    .glow-on-hover {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .glow-on-hover:hover {
+        text-shadow: 0 0 20px rgba(16, 185, 129, 0.15), 0 0 30px rgba(16, 185, 129, 0.1), 0 0 40px rgba(16, 185, 129, 0.05);
     }
 }

@@ -1,41 +1,27 @@
-/*
-Author: Assistant <assistant@ai.com>
-Created: 2024-12-19
-Purpose: Footer component with logo and contact information for Aloe frontend
-*/
-
 import { Component } from "solid-js";
 import { Motion } from "solid-motionone";
 
 const Footer: Component = () => {
   return (
-    <footer class="snap-start flex items-center justify-center bg-gray-800 text-gray-300 h-screen">
+    <footer class="relative bg-black text-gray-400 text-center py-16 px-8 border-t border-emerald-900/30 overflow-hidden">
+      {/* Subtle background elements */}
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute top-0 left-1/4 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl"></div>
+        <div class="absolute top-0 right-1/4 w-24 h-24 bg-emerald-400/5 rounded-full blur-2xl"></div>
+      </div>
+
       <Motion.div
-        class="text-center px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        class="relative max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
       >
-        <p class="flex items-center justify-center mb-2">
-          <img
-            src="/images/logo/64logo.png"
-            alt="Aloe Icon"
-            class="m-1 w-8 h-8"
-          />
-          <br />
+        <p class="text-lg hover:text-emerald-300 transition-colors duration-300 cursor-pointer hover-glow">
+          © {new Date().getFullYear()} Aloe Health, LLC
         </p>
-        <span>{new Date().getFullYear()} &copy; aloe health</span>
-        <p class="mb-2">all rights reserved</p>
-        <div class="mt-4">
-          <p>
-            reach us at{" "}
-            <span class="hover-effect">
-              <a href="mailto:contact@aloe-health.tech">
-                contact@aloe-health.tech
-              </a>
-            </span>
-          </p>
-        </div>
+        <p class="text-sm text-gray-500 mt-2 hover:text-gray-400 transition-colors duration-300">
+          Building better tools for the body
+        </p>
       </Motion.div>
     </footer>
   );

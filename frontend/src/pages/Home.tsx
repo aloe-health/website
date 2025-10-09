@@ -9,17 +9,15 @@ import Hero from "../components/Hero";
 import Mission from "../components/Mission";
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Team from "../components/Team";
 import Footer from "../components/Footer";
 
 const Home: Component = () => {
   return (
-    <div class="Home snap-y snap-mandatory overflow-y-scroll h-screen">
+    <div class="Home">
       <Hero />
       <Mission />
       <About />
       <Contact />
-      <Team />
       <Footer />
     </div>
   );
